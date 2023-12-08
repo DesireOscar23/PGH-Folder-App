@@ -33,8 +33,11 @@ class LoginController extends Controller
         if(Auth::user()->role_as == '1'){
             return redirect('admin/dashboard')->with('status', 'Welcome to Admin Dashboard');
         }
-        else{
+        else if(Auth::user()->role_as == '0'){
             return redirect('user/dashboard')->with('status', 'Welcome to PGH Folder Issuing System');
+        }
+        else{
+            return "You have entered a wrong URL";
         }
     }
 

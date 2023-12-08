@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends(Auth::check() ? 'layouts.master' : 'layouts.layout')
 
 @section('content')
 @if($results->isEmpty())

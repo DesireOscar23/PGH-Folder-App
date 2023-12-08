@@ -119,15 +119,4 @@ Validator::extend('integer_or_fraction', function ($attribute, $value, $paramete
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        $issue = Issue::find($id);
-
-        if ($issue) {
-            $issue->delete();
-            return redirect()->route('issues.index')->with('success', 'Product deleted successfully');
-        } else {
-            return redirect()->route('issues.index')->with('error', 'Product not found');
-        }
-    }
 }

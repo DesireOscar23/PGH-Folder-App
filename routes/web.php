@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\DashboardContrller;
 use App\Http\Controllers\user\DashboardController;
 use App\Http\Controllers\IssuesController;
+use App\Http\Controllers\FolderController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,3 +31,9 @@ Route::delete('/issues/{id}', [IssuesController::class, 'destroy'])->name('issue
 
 //Search implementation
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+
+Route::resource('folders', FolderController::class);
+
+Route::get('/users', [UserController::class, 'index'])->name('users');
+
+Route::delete('/users/{user_id}', [UserController::class, 'destroy'])->name('users.destroy');

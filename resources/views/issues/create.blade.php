@@ -1,5 +1,4 @@
-<!-- @extends(Auth::check() ? 'layouts.master' : 'layouts.layout') -->
-@extends('layouts.layout')
+@extends(Auth::check() ? 'layouts.master' : 'layouts.layout')
 
 @section('content')
 <div class="container-fluid px-4">

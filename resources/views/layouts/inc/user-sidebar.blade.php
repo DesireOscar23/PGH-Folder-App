@@ -2,7 +2,7 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                            
                             <a class="nav-link" href="{{ url('user/dashboard') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Home
@@ -50,7 +50,7 @@
                                     </div>
                                 </nav>
                             </div> -->
-                            <div class="sb-sidenav-menu-heading">Activities</div>
+                            
                             <a class="nav-link" href="{{ url('issues') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Patient List
@@ -58,6 +58,14 @@
                             <a class="nav-link" href="{{ url('issues/create') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Registration
+                            </a>
+                            <a class="nav-link" href="{{ url('folders/create') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                New Folders In
+                            </a>
+                            <a class="nav-link" href="{{ url('folders') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Folders Received
                             </a>
                         </div>
                     </div>

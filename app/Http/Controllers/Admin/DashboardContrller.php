@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Issue;
 use App\Models\User;
+use App\Models\Folder;
 
 class DashboardContrller extends Controller
 {
@@ -14,11 +15,16 @@ class DashboardContrller extends Controller
 
         // $newf->no_of_folders = $request->input('no_of_folders');
 
-        $total =50;
+        $total = Folder::sum('no_of_folders');
         $released = Issue::count();
         $remains = $total - $released;
         
         $users = User::count();
         return view('admin.dashboard', compact('total', 'released', 'remains', 'users'));
+    }
+
+    public function registered_users(){
+        return view('users.index',[
+            'users'=>User::all()]);  
     }
 }
